@@ -17,14 +17,14 @@ dinner_cal = int(input("How many calories did you have for dinner? "))
 snack_cal = int(input("How many calories did you have as snacks? "))
 exercise_cal = int(input("How many calories did you burn exercising? "))
 gender = str(input("Are you male or female? enter M or F."))
-weight = int(input("What is your weight in kg?"))
-height = int(input("What is your height in cm?"))
+weight = int(input("What is your weight in lbs?"))
+height = int(input("What is your height in inches?"))
 age = int(input("What is your age?"))
 
 if gender == "M":
-    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5
+    bmr = (10 * (weight / 2.2)) + (6.25 * (height * 2.54)) - (5 * age) + 5
 elif gender == "F":
-    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161
+    bmr = (10 * (weight / 2.2)) + (6.25 * (height * 2.54)) - (5 * age) - 161
 
 fitness = Diet(breakfast_cal, lunch_cal, dinner_cal, snack_cal, exercise_cal, bmr)
 
